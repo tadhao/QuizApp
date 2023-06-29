@@ -24,6 +24,7 @@ the json-server and the `npm start` should be run in a separate terminal to work
 
 ### `npm install`
 Setups modules for project, feel free to add your own if needed.
+Optional: `npm install @mui/material @emotion/react @emotion/styled`
 ### `npm start`
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
