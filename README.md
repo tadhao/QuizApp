@@ -34,5 +34,5 @@ Here's a mockup of the design:
 ![Alt text](image.png)
 ![Alt text](image-1.png)
 ## How to run this assignment:
-In the project directory, you need to run `npm install`, `npm start` and `json-server --watch...`(described below).
+In the project directory, you need to run `npm install`, `npm start` and `json-server --watch...`(described above).
 the json-server and the `npm start` should be run in a separate terminal to work together.
