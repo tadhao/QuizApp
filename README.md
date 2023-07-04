@@ -1,4 +1,8 @@
 # Getting Started With for Technical Interview Assignment for Full-Stack Dev @ Codebashing
+Hi, Welcome :) And thank you for taking the time and effort for doing this assignment.
+The goal of the assignment is for us to assess your technical skills as a FullStack Developer.
+It includs mainly working on a client side repository and creating a mini version of "Who wants to be a millionaire?"
+type of questionaire.
 
 
 ### `npm install`
@@ -15,10 +19,9 @@ These are the routes that are availble for this task:
 `http://localhost:3030/questions/[1-3]`
 `http://localhost:3030/correct_answers/[1-3]`
 
-Hi, Welcome :) And thank you for taking the time and effort for doing this assignment.
-The goal of the assignment is for us to assess your technical skills as a FullStack Developer.
-It includs mainly working on a client side repository and creating a mini version of "Who wants to be a millionaire?"
-type of questionaire.
+## How to run this assignment:
+In the project directory, you need to run `npm install`, `npm start` and `json-server --watch...`(described above).
+the json-server and the `npm start` should be run in a separate terminal to work together.
 
 # Goal
 Build a page where there will be 4 sections:
@@ -33,6 +36,4 @@ Build a page where there will be 4 sections:
 Here's a mockup of the design:
 ![Alt text](image.png)
 ![Alt text](image-1.png)
-## How to run this assignment:
-In the project directory, you need to run `npm install`, `npm start` and `json-server --watch...`(described above).
-the json-server and the `npm start` should be run in a separate terminal to work together.
+
