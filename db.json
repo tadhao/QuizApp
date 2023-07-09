@@ -7,7 +7,7 @@
     {
       "id": 1,
       "text": "Who was the first PM of israel?",
-      "possilbe_answers": [
+      "possible_answers": [
         "David Ben Gurion",
         "Golda Meir",
         "Yitzhak Rabin",
@@ -17,7 +17,7 @@
     {
       "id": 2,
       "text": "What is Israel's capital?",
-      "possilbe_answers": [
+      "possible_answers": [
         "Jerusalem",
         "Tel Aviv",
         "Haifa",
@@ -27,7 +27,7 @@
     {
       "id": 3,
       "text": "What is the color of the sky?",
-      "possilbe_answers": [
+      "possible_answers": [
         "Green",
         "Red",
         "Blue",
