@@ -1,52 +1,45 @@
-{ "user": {
-  "id": 1,
-  "name": "John Doe",
-  "email": "john.doe@gmail.com"
-},
+{
+  "user": {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john.doe@gmail.com"
+  },
   "questions": [
     {
       "id": 1,
-      "text": "Who was the first PM of israel?",
-      "possible_answers": [
-        "David Ben Gurion",
-        "Golda Meir",
-        "Yitzhak Rabin",
-        "Menachem Begin"
-    ]
+      "title": " 1. What is the capital of India?",
+      "answers": ["New Delhi", "Mumbai", "Kolkata", "Chennai"]
     },
     {
       "id": 2,
-      "text": "What is Israel's capital?",
-      "possible_answers": [
-        "Jerusalem",
-        "Tel Aviv",
-        "Haifa",
-        "Eilat"
-    ]
+      "title": " 2. What is the capital of Australia?",
+      "answers": ["Sydney", "Melbourne", "Canberra", "Perth"]
     },
     {
       "id": 3,
-      "text": "What is the color of the sky?",
-      "possible_answers": [
-        "Green",
-        "Red",
-        "Blue",
-        "Yellow"
-    ]
+      "title": " 3. What is the capital of USA?",
+      "answers": ["New York", "Washington DC", "Los Angeles", "Chicago"]
     }
   ],
-  "correct_answers": [
+  "answers": [
     {
       "id": 1,
-      "correct": "David Ben Gurion"
+      "correctAnswer": 0,
+      "nextQuestion": 2
     },
     {
       "id": 2,
-      "correct": "Jerusalem"
+      "correctAnswer": 2,
+      "nextQuestion": 3
     },
     {
       "id": 3,
-      "correct": "Blue"
+      "correctAnswer": 1,
+      "nextQuestion": null
     }
-  ]
+  ],
+  "start": {
+    "firstQuestionId": 1,
+    "numberOfQuestions": 3
+  }
 }
