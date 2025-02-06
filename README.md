@@ -1,20 +1,59 @@
-# Getting Started With for Technical Interview Assignment for Full-Stack Dev @ Codebashing
+# Quiz App
 
-Hi, Welcome :) And thank you for taking the time and effort for doing this assignment.
-The goal of the assignment is for us to assess your technical skills as a FullStack Developer.
-It includs mainly working on a client side repository and creating a mini version of "Who wants to be a millionaire?"
-type of questionaire.
+A simple interactive quiz application built with React. This app allows users to answer multiple-choice questions, tracks their score, and provides a timer. At the end of the quiz, users can see their score and percentage.
 
-### `npm install`
+## Features
 
-Setups modules for project, feel free to add your own if needed.
-Optional: `npm install @mui/material @emotion/react @emotion/styled`
+- Multiple-choice questions with options
+- Timer that counts down from 60 seconds
+- Dynamic score calculation based on correct answers
+- Displays the final score and percentage at the end
+- Option to restart the quiz (coming soon)
 
-### `npm start`
+## Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Quiz App Demo](path_to_your_demo_image.gif)
 
+## Installation
+
+Follow the steps below to get the project up and running on your local machine:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/quiz-app.git
+```
+
+### 2. Navigate to the Project Directory
+```bash
+cd quiz-app
+```
+
+### 3.  Install Dependencies
+Run the following command to install the required dependencies:
+```bash
+npm install
+```
+
+### 4.  Run the Development Server
+
+```bash
+npm start
+```
+This will start the React development server and open the app in your default browser.
+
+## Technology Stack
+
+- **React** - Frontend framework
+- **Material-UI** - Styling framework
+- **JavaScript (ES6)** - Programming language
+- **CSS** - For custom styling
+
+## API
+
+The app fetches the username data from a local backend (e.g., `http://localhost:3030/user`). Make sure to set up the backend API for the app to work correctly. If the API is unavailable, it defaults to "User"
+
+For setting up the API follow the step below,
 ### `json-server --watch db.json --port 3030`
 
 Runs the simulated backend for the project, it uses the following library: [json-server](https://github.com/typicode/json-server)
@@ -23,27 +62,10 @@ These are the routes that are availble for this task:
 `http://localhost:3030/questions/[1-3]`
 `http://localhost:3030/correct_answers/[1-3]`
 
-## How to run this assignment:
+## Components
 
-In the project directory, you need to run `npm install`,
-`npm start`,
-`npm install -g json-server`,
-`json-server --watch...`(described above).
-the json-server and the `npm start` should be run in a separate terminal to work together.
-
-# Goal
-
-Build a page where there will be 4 sections:
-
-1. Displaying questions
-2. User inputing the answers
-3. Displaying users' name
-4. Displaying total score and percentage of correctly answered questions at the end of the quiz
-5. If the success rate is lower than 50% display to the user to "Try Again and improve".
-6. If the success is more than 50% but lower than 90%, display to the user "Nice attempt but try again".
-7. If the success is above 90%, display "Way to go Champ!!"
-8. Displaying a one-minute timer for the question, at the end of the minute, send the answer to the server even if the user hasn't answered it yet
-
-Here's a mockup of the design:
-![Alt text](image.png)
-![Alt text](image-1.png)
+- **App**: The main component that renders the entire quiz interface.
+- **Question**: Displays the current question and answer options.
+- **Timer**: Displays the countdown timer.
+- **Score**: Displays the current score of the user.
+- **Result**: Displays the final score and percentage after the quiz is completed.
