@@ -4,12 +4,6 @@ import Question from './question';
 import Timer from './timer';
 import Result from './result';
 
-const QuestionsList = () => [
-  { id: 1, question: "What is 2 + 2?", options: ["3", "4", "5", "6"], answer: "4" },
-  { id: 2, question: "What is the capital of France?", options: ["Berlin", "Madrid", "Paris", "Rome"], answer: "Paris" },
-  { id: 3, question: "What is 10 / 2?", options: ["3", "4", "5", "6"], answer: "5" },
-];
-
 const QuizApp = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswers, setUserAnswers] = useState({});
@@ -18,10 +12,18 @@ const QuizApp = () => {
   const [username, setUsername] = useState("User");  // Default username
   const [score, setScore] = useState(0);  
   const [selectedAnswer, setSelectedAnswer] = useState(null);  
-  const questions = QuestionsList();
+  const [questions, setQuestions] = useState([]);
 
+  // Fetch questions from API
   useEffect(() => {
-    // Fetch the username from the server
+    fetch("http://localhost:3030/questions")
+      .then((res) => res.json())
+      .then((data) => setQuestions(data))
+      .catch((error) => console.error("Error fetching questions:", error));
+  }, []);
+
+  // Fetch the username from the server
+  useEffect(() => {
     fetch("http://localhost:3030/user")
       .then((res) => res.json())
       .then((data) => setUsername(data.name))
@@ -63,13 +65,13 @@ const QuizApp = () => {
 
   const calculateScore = () => {
     return questions.reduce((totalScore, question) => {
-      if (userAnswers[question.id] === question.answer) {
-        return totalScore + 1;
+      if (userAnswers[question.id] === question.answers[0]) {
+        return totalScore + 1; // Assuming the first option is the correct answer
       }
       return totalScore;
     }, 0);
   };
-  
+
   useEffect(() => {
     if (submitted) {
       const finalScore = calculateScore();
@@ -85,16 +87,15 @@ const QuizApp = () => {
         <Timer timer={timer} />
         <Typography variant="h6">Score: {score}</Typography>
       </Box>
-      {!submitted ? (
+      {!submitted && questions.length > 0 && (
         <Question
-          question={questions[currentQuestion].question}
-          options={questions[currentQuestion].options}
+          question={questions[currentQuestion].title}  // Use title for question
+          options={questions[currentQuestion].answers}  // Use answers array
           onAnswerSelect={handleAnswerSelect}
           selectedAnswer={selectedAnswer}
         />
-      ) : (
-        <Result score={score} totalQuestions={questions.length} />
       )}
+      {submitted && <Result score={score} totalQuestions={questions.length} />}
       {!submitted && <Button variant="contained" color="secondary" onClick={handleNextQuestion} style={{ margin: "10px" }}>Next</Button>}
       {submitted && <Button variant="contained" color="default" onClick={handleStartOver}>Start Over</Button>}
     </Box>
